@@ -1,0 +1,370 @@
+/* Apple mockup */
+
+@font-face {
+  font-family: "SF Pro Text";
+  font-style: italic;
+  font-weight: 100;
+  src: local("☺︎"),
+    url("https://www.apple.com//wss/fonts/SF-Pro-Text/v3/sf-pro-text_ultralight-italic.woff2")
+      format("woff2"),
+    url('https://www.apple.com/wss/fonts/SF-Pro-Text/v3/sf-pro-text_regular.woff2')
+      format("woff"),
+    url("https://www.apple.com//wss/fonts/SF-Pro-Text/v3/sf-pro-text_ultralight-italic.ttf")
+      format("truetype");
+  /* (C) 2019 Apple Inc. All rights reserved.
+ */
+}
+
+@font-face {
+    font-family: 'SF Pro Display';
+    src: url(https://www.apple.com/wss/fonts/SF-Pro-Display/v3/sf-pro-display_semibold.woff2);
+  }
+
+:root {
+  --locale-bg: #444;
+  --nav-bg: #333;
+  --nav-clr: rgb(245, 245, 247);
+  --font-apple: "SF Pro Text";
+  --appleBlue: #0071e3;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  /* min-width: 400px; */
+  width: 100vw;
+  font-family: var(--font-apple);
+}
+
+.btn {
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* ////////////////////////////////////////////// */
+.content-wrapper {
+  display: flex;
+  position: absolute;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  width: 100vw;
+}
+
+.content-wrapper > * {
+  margin-bottom: 5px;
+}
+
+/* /////////////////////////////////////////////// */
+/* upper bars */
+.locale-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: space-around;
+  background-color: var(--locale-bg);
+  width: 100%;
+  height: 80px;
+  padding: 20px auto;
+  display: none;
+}
+
+.locale-nav .btn {
+  background: #2185d4;
+  color: white;
+}
+
+.locale-nav h1 {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.locale-nav .close-btn {
+  width: 20px;
+  height: 20px;
+  /* background-color: var(--locale-bg); */
+  /* background-color: red; */
+  border-bottom: 2px solid #999;
+  transform-origin: center;
+  transform: rotate(45deg);
+  margin: 5px auto;
+  position: relative;
+}
+.locale-nav .close-btn::after {
+  position: absolute;
+  background-color: red;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  left: 0;
+  transform: rotate(135deg);
+  z-index: 10;
+}
+/* ////////////////////////////////////////////////////////////////// */
+.main-nav {
+  /* position: relative; */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  /* min-width: 480px; */
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  background-color: var(--nav-bg);
+  color: var(--nav-clr);
+  z-index: 100;
+  margin-bottom: 0;
+}
+
+.main-nav ul {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  /* margin: auto 0; */
+  /* padding: 0 20px; */
+  /* color: var(--nav-clr); */
+}
+
+.main-nav ul li {
+  padding: 0 25px;
+}
+.main-nav ul li a {
+  color: var(--nav-clr);
+}
+
+.main-nav ul li:first-child a svg {
+  fill: var(--nav-clr);
+}
+
+/* ///////////////////////////////////////////// */
+/* covid ribbon */
+.covid-container {
+  background-color: var(--appleBlue);
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.covid {
+  background-color: #0071e3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.covid a {
+  color: var(--nav-clr);
+  text-align: center;
+}
+
+.covid a:hover {
+  text-decoration: underline;
+}
+
+/* ////////////////////////////////////////// */
+/* online ribbon */
+.ribbon-shop-container {
+  background-color: var(--nav-clr);
+  width: 100%;
+  margin: 0 10px;
+  padding: 0 auto;
+}
+.shop-online-ribbon {
+  background-color: var(--nav-clr);
+  /* position: absolute; */
+  height: 60px;
+  width: 100%;
+  /* display: flex; */
+  /* display: inline; */
+  justify-content: center;
+  /* align-items: center; */
+  text-align: center;
+  /* padding: 0 10px; */
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0px;
+  padding: 0 10px;
+  font-size: 14px;
+  z-index: 10;
+}
+
+a.shop.link {
+  color: var(--appleBlue);
+}
+
+/* .shop-online-ribbon .div a:hover {
+  background-color: black; // TODO: check why color not changing
+} */
+
+/* /////////////////////////////////////////////////////////////////// */
+.section {
+}
+/* /////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////// */
+/* section 1 */
+
+.section-1 {
+  /* background-color: red; */
+  background-color: #fbfbfd;
+  background: url("https://www.apple.com/v/home/t/images/promos/tv-plus-snoopy-show/promo_snoopy_show__4ai3temn7w2u_large_2x.jpg")
+    no-repeat center center/cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: calc(100vh - 60px);
+  /* padding: 200px auto; */
+  top: 0;
+  /* margin-top: 100px; */
+  /* margin-bottom: 10px; */
+}
+.section-1 .logo-container {
+  margin: 0 auto;
+  width: 100%;
+  /* height: 30px; */
+}
+.section-1 .logo-container img {
+  height: 25px;
+}
+.section-1 .image-wrapper-1 {
+  /* position: absolute; */
+  top: 0;
+  height: 100px;
+  width: 100%;
+}
+
+.section-1 .image-wrapper-1 img {
+  top: 0;
+  height: 20px;
+  width: 130px;
+}
+
+.section-1 .section-image {
+  /* display: none; */
+  /* position: relative; */
+  height: 450px;
+  width: 450px;
+  /* position: absolute; */
+}
+
+.section-1 .btn-watch-now {
+  outline: 3px solid red;
+  position: relative;
+  bottom: 50px;
+  left: 0;
+  width: 130px;
+  height: 45px;
+  margin: auto;
+  /* background-color: #000; */
+  /* color: white; */
+  border-radius: 22px;
+  /* padding: 20px; */
+  position: relative;
+  z-index: 1;
+}
+
+/* /////////////////////////////////////////// */
+/* section 2 */
+
+.section-2 {
+  /* background-color: #FBFBFD; */
+  background: url(https://www.apple.com/v/home/t/images/heroes/iphone-12/iphone_12_us__fo0stbby242m_large_2x.jpg)
+    no-repeat center center/cover;
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 95vh;
+  /* margin-bottom: 10px; */
+}
+
+.section-2 > h2 {
+  font-size: 35px;
+  line-height: 1.125;
+  font-weight: 600;
+  font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+}
+
+.section-2 > h3 {
+  font-size: 19px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+/* /////////////////////////////////////////////// */
+/* section 3 - iPhone pro */
+.section-3 {
+    background: url('../Img/iphone_12_pro_us__e5oyysg4k0ya_large_2x.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 95vh;
+}
+
+.section-3 h2, h3, p,a {
+    color: white;
+}
+
+
+/* /////////////////////////////////////////////// */
+/* section 4 - Valentine Day */
+.section-4 {
+    background: url('../Img/hero_valentines_day_last_chance__d30pq2o80c8y_large_2x.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 95vh;
+}
+
+/* /////////////////////////////////////////////// */
+/* section 5 - BLM */
+.section-5 {
+    background: url('../Img/promo_reji__lj3lxa1vxgyu_large_2x.jpg') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 95vh;
+}

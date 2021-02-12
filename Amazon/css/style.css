@@ -1,0 +1,174 @@
+/* Amazon Product Page Mockup - Ayelet Danieli */
+:root {
+  --colorHover: #e47911;
+  --colorDark: #333;
+}
+
+@font-face {
+  font-family: "Amazon Ember";
+  src: url("../fonts/webfonts/AmazonEmber_W_Rg.woff");
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Amazon Ember", Arial, sans-serif;
+}
+
+.container {
+  width: 99vw;
+}
+/* /////////////////////////////////////////////////// */
+
+.nav-belt {
+  height: 60px;
+  background-color: #131921;
+  display: flex;
+  flex-direction: row;
+  position: relative;
+}
+
+.nav-belt > .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 35px;
+  background-size: 350px;
+  background-color: #fff;
+  background: url("../images/nav-sprite-global-1x-hm-dsk-reorg._.png");
+  background-position: -10px -51px;
+  padding: 5px 8px 0 6px;
+  margin: 1px;
+}
+
+/* /////////////////////////////////////////////////// */
+.nav-main {
+  height: 40px;
+  background-color: #232f3e;
+}
+
+/* /////////////////////////////////////////////// */
+/* Categories */
+
+.nav-categories {
+  height: 30px;
+  font-size: 12px;
+  line-height: 33px;
+}
+
+.nav-categories ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  list-style: none;
+  background-color: #fafafa;
+}
+
+.nav-categories ul li {
+  white-space: nowrap;
+  position: relative;
+}
+
+.nav-categories ul li a {
+  color: var(--colorDark);
+  padding: 5px;
+  text-decoration: none;
+}
+
+.nav-categories ul li:hover a {
+  color: var(--colorHover);
+  border-bottom: 2px solid var(--colorHover);
+}
+
+.nav-categories > ul > li:nth-child(1) > a {
+  font-weight: bold;
+  position: relative;
+}
+
+.nav-categories > ul > li:nth-child(1) > a::after {
+  background-color: red;
+  position: absolute;
+  top: 14px;
+  right: 11px;
+  border-style: solid;
+  /* _border-style: dashed; */
+  /* border-width: 3px; */
+  border-width: 10px;
+  border-color: transparent;
+  border-top: 3px solid #a0a0a0;
+  border-bottom-width: 0;
+  width: 0;
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  font-size: 3px;
+  zoom: 1;
+}
+
+.nav-categories > ul > li > a > span {
+  /* background-color: red; */
+  position: absolute;
+  /* top: 14px; */
+  top: 16px;
+  /* right: 11px; */
+  right: -5px;
+  border-style: solid;
+  /* _border-style: dashed; */
+  border-width: 3px;
+  border-color: transparent;
+  border-top: 3px solid #a0a0a0;
+  border-bottom-width: 0;
+  /* width: 0; */
+  width: 0px;
+  height: 0px;
+  font-size: 3px;
+  line-height: 0;
+  font-size: 3px;
+  zoom: 1;
+}
+
+.nav-categories > ul > li > a:hover > span {
+  border-top-color: #666;
+}
+
+/* /////////////////////////////////////////////////// */
+/* Show case */
+
+.show-case {
+  height: 80vh;
+  /* background-color: lightsalmon; */
+  display: flex;
+  /* grid-template-columns: repeat(3, 1fr); */
+  /* grid-template-rows: repeat(3, 1fr); */
+  flex-direction: row;
+}
+
+.bread-crumbs-container > p {
+  height: 20px;
+  /* background-color: lightslategrey; */
+  /* font-size: 12px; */
+  font-size: 12px;
+  line-height: 14px;
+  color: #565959;
+  /* color: magenta; */
+  /* font-weight: 400; */
+  /* display: flex; */
+  /* justify-content: left; */
+  padding: 0 16px;
+  margin-top: 8px;
+}
+
+.content-conainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ////////////////////////
+sandbox */
