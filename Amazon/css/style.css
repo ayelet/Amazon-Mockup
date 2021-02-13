@@ -2,6 +2,7 @@
 :root {
   --colorHover: #e47911;
   --colorDark: #333;
+  --colorTextNavbar: #ccc;
 }
 
 @font-face {
@@ -22,34 +23,174 @@ body {
 .container {
   width: 99vw;
 }
+
+a {
+  cursor: pointer;
+}
+
+.sprite {
+    background: url("../images/nav-sprite-global-1x-hm-dsk-reorg._.png");
+}
 /* /////////////////////////////////////////////////// */
 
 .nav-belt {
   height: 60px;
   background-color: #131921;
-  display: flex;
-  flex-direction: row;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* justify-content: space-around; */
+  display: grid;
+  grid-template-columns: 100px 120px 525px 50px 125px 125px 70px 75px;
+  grid-template-rows: 60px;
   position: relative;
+  grid-gap: 10px;
+}
+.nav-belt * {
+  /* outline: 1px solid magenta; */
+  color: var(--colorTextNavbar);
 }
 
 .nav-belt > .logo {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100px;
+  /* width: 100%; */
   height: 35px;
   background-size: 350px;
-  background-color: #fff;
-  background: url("../images/nav-sprite-global-1x-hm-dsk-reorg._.png");
-  background-position: -10px -51px;
-  padding: 5px 8px 0 6px;
+  /* backg  round-color: #fff; */
+  /* background: url("../images/nav-sprite-global-1x-hm-dsk-reorg._.png"); */
+  background-position: -10px -50px;
+  padding: 1px 8px 0 6px;
   margin: 1px;
+  margin-top: 12px;
+  overflow: hidden;
 }
 
-/* /////////////////////////////////////////////////// */
+.nav-belt > :hover {
+  outline: 1px solid white;
+}
+.nav-belt .logo a {
+    cursor: pointer;
+  width: inherit;
+  height: inherit;
+  display: block;
+}
+/* /////////////////////// */
+.nav-belt .location {
+  /* top: 0;  */
+  left: 100px;
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-template-rows: 1fr 1fr;
+  /* color: white; */
+  width: 100%;
+  justify-content: start;
+
+}
+.nav-belt .location .sprite {
+  background: url("../images/nav-sprite-global-1x-hm-dsk-reorg._.png");
+  background-position: -71px -378px;
+  grid-row: 1 / span 2;
+  height: 18px;
+  width: 15px;
+  
+  margin-top: 28px;
+}
+.nav-belt .location .line {
+  white-space: nowrap;
+  overflow: hidden;
+  margin-left: 8px;
+}
+.nav-belt .location .line1 {
+    align-self: end;
+  font-size: 12px;
+  justify-self: stretch;
+}
+.nav-belt .location .line2 {
+  font-size: 14px;
+  font-weight: 700;
+}
+/* //////////////////////////////////// */
+.nav-belt .search-textbox {
+    width: 525px;
+    background-color: lightpink;
+}
+
+/* //////////////////////////////////// */
+.nav-belt .language {
+  background-color: lightseagreen;
+  height: 100%;
+}
+
+
+
+
+
+/* /////////// //////////////////////////////////////// */
 .nav-main {
   height: 40px;
   background-color: #232f3e;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav-main .fill * {
+    color:white;
+    font-size: 14px;
+    line-height: 12px;
+}
+.nav-main .left *,
+.nav-main .right * {
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.nav-main .left a,
+.nav-main .right a {
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.nav-main .left {
+    margin-left: 15px;
+}
+.nav-main .right {
+    margin-right: 15px;
+}
+
+.nav-main .fill ul {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row;
+    flex-direction: row;
+    white-space: nowrap;
+} 
+.nav-main .fill ul li {
+    list-style: none;
+    
+}
+.nav-main .fill ul li * {
+    margin: 15px;
+}
+.nav-main .fill ul li a {
+    text-decoration: none;
+}
+
+/* TODO: Change this later to a real hamburger menu */
+.nav-main > nav.left > a > span:nth-child(1) {
+    transform: rotate(90deg);
+    margin: auto 0;
+    position: absolute;
+    transform-origin: center;
+}
+.nav-main > nav.left > a > span:nth-child(2) {
+    /* transform: rotate(90deg); */
+    /* position: absolute; */
+    /* transform-origin: center; */
+    margin-left: 20px;
 }
 
 /* /////////////////////////////////////////////// */
@@ -98,8 +239,6 @@ body {
   top: 14px;
   right: 11px;
   border-style: solid;
-  /* _border-style: dashed; */
-  /* border-width: 3px; */
   border-width: 10px;
   border-color: transparent;
   border-top: 3px solid #a0a0a0;
@@ -142,12 +281,12 @@ body {
 /* Show case */
 
 .show-case {
-  height: 80vh;
-  /* background-color: lightsalmon; */
-  display: flex;
+  /* height: 80vh; */
+  background-color: lightsalmon;
+  /* display: flex; */
   /* grid-template-columns: repeat(3, 1fr); */
   /* grid-template-rows: repeat(3, 1fr); */
-  flex-direction: row;
+  /* flex-direction: row; */
 }
 
 .bread-crumbs-container > p {
@@ -157,7 +296,7 @@ body {
   font-size: 12px;
   line-height: 14px;
   color: #565959;
-  /* color: magenta; */
+  
   /* font-weight: 400; */
   /* display: flex; */
   /* justify-content: left; */
@@ -165,10 +304,111 @@ body {
   margin-top: 8px;
 }
 
-.content-conainer {
+.content-container {
   display: flex;
   flex-direction: column;
+  width: 98%;
 }
 
+.product-container {
+    display: flex;
+    justify-content:space-between;
+    width: 100%;
+    height: 100%;
+}
+
+
+.content-container .product-container .product-left {
+    height: 80vh;
+    width: 45%;
+    background-color: lightslategrey;
+}
+.content-container .product-container .product-right {
+    height: 80vh;
+    /* width: 244px; */
+    width: 25%;
+    background-color: lightseagreen;
+    align-self: right;
+}
+.content-container .product-container .product-center {
+    height: 80vh;
+    /* margin-left: 46.5%; */
+    /* margin-right: 270px; */
+    /* width: calc(100vw - (45%  + 244px + 60px)); */
+    width: 30%;
+    opacity: 0.6;
+    /* width: calc(100vw - 500px); */
+    background-color: lightyellow;
+}
+
+
+.content-conainer .product-container .product-center {
+    width: 20%;
+    background-color:lightyellow;
+}
+.content-conainer .product-container .product-right {
+    width: 20%;
+    background-color:lightpink;
+}
+
+.product-center .title {
+    font-size: 24px;
+    line-height: 32px;
+    display: block
+}
+.product-center .visit-store {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.product-center .visit-store a,
+.product-center .visit-store a:link,
+.product-center .visit-store a:visited{
+    text-decoration: none;
+    color: #007185
+}
+.product-center .visit-store a:hover{
+    text-decoration: underline;
+}
+
+.product-center .customer-reviews {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.product-center .customer-reviews .stars {
+    width: 80px;
+    height: 15px;
+    /* background-position:  center; */
+    background: url('../images/aui-mini-sprite-2015-02.png') -170px;
+    margin-right: 8px;
+}
+
+.product-center .sellers {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 20px 0;
+}
+
+
+.product-center .sellers a:link,
+.product-center .sellers a:visited,
+.product-center .sellers a {
+    text-decoration: none;
+    color: black
+}
+
+.product-center .sellers a:hover {
+    text-decoration: underline;
+    /* color: #007185; */
+    text-decoration-color:#007185;
+    /* outline: 0; */
+}
+
+.product-center .feature-bullets ul {
+    list-style: disc;
+    margin-left: 18px;
+}
+    
 /* ////////////////////////
 sandbox */
